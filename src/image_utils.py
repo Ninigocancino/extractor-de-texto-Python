@@ -31,3 +31,9 @@ def imagen_a_texto(ruta_imagen, idioma= 'spa'):
     except Exception as e: 
         print(f"Error en OCR: {e}")
         return None
+    
+
+def verificar_idioma(idioma): 
+    """Valida si Tesseract soporta el idioma"""
+    idiomas_soportados = pytesseract.get_languages()
+    return idioma in idiomas_soportados
